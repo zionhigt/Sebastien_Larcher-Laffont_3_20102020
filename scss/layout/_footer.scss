@@ -1,0 +1,10 @@
+footer
+{
+	position: relative;
+	width: auto;
+	height: rem(220px);
+	background-color: $deep_grey;
+	padding: rem(25px) 0 0 rem(20px);
+	@include auto_color($deep_grey);
+}
+

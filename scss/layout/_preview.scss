@@ -1,0 +1,46 @@
+.preview
+{
+	padding: 4rem 0;
+	width: 100%;
+	background-color: $light_grey;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+
+	& h1
+	{
+		width: rem(335px);
+		// align-self: flex-start;
+	}
+
+
+}
+
+@media #{$medium} {
+	
+	.preview
+	{
+		& h1
+		{
+			width: 90%;
+		}
+		&__wrap
+		{
+			display: flex;
+			flex-flow: row wrap;
+			align-content: center;
+			justify-content: space-around;
+			// flex-wrap: wrap;
+			width: 90%;
+
+			& figure
+			{
+				margin-bottom: rem(20px);
+			}
+		}
+	}
+
+
+}

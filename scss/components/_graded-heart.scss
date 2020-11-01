@@ -1,0 +1,25 @@
+@mixin graded-heart($top: 0, $right:12px)
+{
+	& .heart
+	{
+		& .heart__label
+		{
+			@include absolute_box(rem(40px), rem(40px), $top, $right);
+			z-index: 4;
+			padding: rem(2px);
+			background:no-repeat center/70% url($icon_path + 'heart-solid.svg');
+		}
+	}
+
+	& input
+	{
+		display: none;
+	}
+
+	&  input:checked + label.heart__label
+	{
+		background-image: url($icon_path + 'heart-graded.svg');
+
+	}
+
+}

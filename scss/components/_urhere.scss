@@ -1,0 +1,18 @@
+.urhere__marker
+{	
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: rem(50px);
+	background: linear-gradient(darken($basic_grey, 15%) 5%, 5.9%, $basic_grey);
+
+	&::before
+	{
+		width: rem(160px);
+		content: "Paris, Belleville";
+		background: no-repeat top  left/1rem url($icon_path + "map-marker-alt-solid.svg");
+		font-weight: bold;
+		text-align: center;
+		margin: auto;
+	}
+}

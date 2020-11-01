@@ -1,0 +1,25 @@
+.big-picture
+{
+	position: relative;
+	width: 100%;
+	height: rem(265px);
+	overflow: hidden;
+
+	& img
+	{
+		object-fit: contain;
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media #{$small} 
+{
+	.big-picture
+	{
+		overflow: visible;
+		width: auto;
+		height: 100%;
+	}
+
+}

@@ -1,0 +1,21 @@
+@mixin logo($size:32px, $bg_color: white)// Apply to .logo_container
+{
+	position: relative;
+	text-align: center;
+	& .logo
+	{
+		background-color: $bg_color;
+		font-family: Shrikhand;
+		font-size: rem($size);
+		@include auto-color($bg_color);
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	
+}
+
+.main-header
+{
+	@include logo;
+
+}

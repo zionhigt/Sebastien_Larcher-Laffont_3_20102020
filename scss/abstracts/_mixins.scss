@@ -1,0 +1,37 @@
+@mixin auto-color($color)
+{
+	@if lightness($color) > 50%
+	{
+		color: black;
+	}
+	@else
+	{
+		color: white;
+	}
+}
+
+@mixin absolute_box($w:100%, $h:100%, $t:auto, $r:auto, $b:auto, $l:auto)
+{
+	position: absolute;
+	@if $w != auto{
+		width: $w;
+	}
+	@if $h != auto{
+		height: $h;
+	}
+	@if $t != auto{
+		top: $t;
+	}
+	@if $r != auto{
+		right: $r;
+	}
+	@if $b != auto{
+		bottom: $b;
+	}
+	@if $l != auto{
+		left: $l;
+	}
+
+
+
+}

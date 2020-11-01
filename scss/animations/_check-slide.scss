@@ -1,0 +1,35 @@
+
+.meal
+{
+	& input:checked + &__flex .price + .check, & input:checked + &__flex .price
+	{
+		transform: translateX(rem(-67px));
+	}
+
+	.price, .check, .check::after
+	{
+		transition: transform 0.6s;
+	}
+
+	&__flex .comment
+	{
+		transition: width 0.6s 0;
+	}
+
+	& input:checked + &__flex .comment
+	{
+		overflow-x: hidden;
+		width: pc(252px);
+		height: auto;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	& input:checked + &__flex .check::after
+	{
+		transform: rotate(-360deg);
+	}
+
+}
+
+

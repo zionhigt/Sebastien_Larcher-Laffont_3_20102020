@@ -1,0 +1,51 @@
+.meal
+{
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	list-style-type: none;
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: $elevated_light_shadow;
+	width: pc(335px);
+	max-width: 375px;
+	min-height: rem(67px);
+	padding: rem(8.5px) rem(12px);
+	margin-bottom: 1rem;
+	overflow: hidden;
+
+	& h2
+	{
+		width: 100%;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	&__flex
+	{
+		align-items: center;
+		display: flex;
+		width: 100%;
+		height: auto;
+	}
+
+
+	& .comment
+	{
+		height: auto;
+		width: pc(319px);
+		margin: rem(10px) rem(10px) 0 0;
+		font-size: rem(15px);
+	}
+
+	& .price
+	{
+		align-self: flex-end;
+		font-weight: bold;
+		padding: 0 0.5rem;
+		height: auto;
+		margin: rem(10px) 0 0 auto;
+	}
+
+}

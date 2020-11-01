@@ -1,0 +1,82 @@
+@mixin card
+{
+	background-color: white;
+	position: relative;
+	width: rem(335px);
+	height: rem(250px);
+	border-radius: 1rem;
+	box-shadow: $elevated_light_shadow;
+	overflow: hidden;
+	
+	& a 
+	{
+		@include absolute_box(100%, 100%, 0, 0, 0, 0);
+		z-index: 3;
+	}
+
+	& .card__img
+	{
+		position: relative;
+		width: 100%;
+		height: rem(175px);
+		overflow: hidden; 
+
+		& img
+		{
+			@include absolute_box(100%, auto, auto, auto, 0, auto);
+			object-fit: contain;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+		}
+
+	}
+
+	& .card--big-pict
+	{
+		& img
+		{
+			bottom: rem(-100px);
+		}
+	}
+
+	& figcaption
+	{
+		position: relative;
+		margin: 0 rem(12px) rem(18px) rem(12px);
+
+		& * { 
+			margin-bottom: 0;
+		}
+		& .card__name
+		{
+			margin-top: rem(10px);
+			font-size: 1rem;
+		}
+
+		& .card__city
+		{
+			margin-top: rem(3px);
+			font-size: 1rem;
+		}
+
+	}
+	
+}
+
+.card
+{
+	margin:0;
+	margin-bottom: 1rem;
+	@include card;
+	& figcaption
+	{
+		@include graded-heart;
+
+	}
+}
+
+.card--new
+{
+	@include panel-new;
+}
