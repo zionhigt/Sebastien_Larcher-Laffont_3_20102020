@@ -5,7 +5,7 @@
 		& label.heart__label
 		{
 			@include absolute_box(rem(40px), rem(40px), $top, $right);
-			z-index: 4;
+			z-index: 3;
 			background:no-repeat center/70% url($icon_path + 'heart-graded.svg');
 			
 			&::before

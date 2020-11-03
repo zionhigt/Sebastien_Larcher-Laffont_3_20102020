@@ -31,6 +31,7 @@
 @import './components/card';
 
 // @import './layout/';
+@import './layout/_loader';
 @import './layout/menu-lists';
 @import './layout/menu-header';
 @import './layout/view-menus';
@@ -42,6 +43,9 @@
 @import './layout/header';
 @import './layout/body';
 
+
+// @import './animations/';
+@import './animations/loader-animation';
 @import './animations/graded-heart-transition';
 @import './animations/check-slide';
 

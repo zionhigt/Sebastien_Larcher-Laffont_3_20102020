@@ -1,4 +1,12 @@
+
 .main-header
 {
 	width: 100%;
+	@include logo;
+
+	.logo
+	{
+		z-index: 3;
+	}
+
 }
