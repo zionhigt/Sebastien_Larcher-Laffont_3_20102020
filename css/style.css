@@ -54,8 +54,8 @@
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
-  width: 89.3333333333%;
-  max-width: 335px;
+  width: 100%;
+  max-width: 375px;
   min-height: 4.1875rem;
   padding: 0.53125rem 0.75rem;
   margin-bottom: 1rem;
@@ -87,11 +87,17 @@
   margin: 0.625rem 0 0 auto;
 }
 
+@media all and (min-width: 854px) {
+  .meal {
+    margin-right: 1.25rem;
+  }
+}
 .list-title {
   text-transform: uppercase;
   margin-bottom: 1.625rem;
   font-size: 1rem;
   list-style-type: none;
+  width: 100%;
 }
 .list-title::after {
   width: 2.5rem;
@@ -102,6 +108,11 @@
   background-color: #99E2D0;
 }
 
+@media all and (min-width: 854px) {
+  .list-title {
+    padding: 0 50%;
+  }
+}
 .big-picture {
   position: relative;
   width: 100%;
@@ -467,11 +478,20 @@
 .view-menus ul {
   position: relative;
   bottom: 0;
-  left: 1.25rem;
   padding: 0;
-  margin-top: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: center;
+  width: 88%;
 }
 
+@media all and (min-width: 854px) {
+  .view-menus ul {
+    margin-bottom: 2.5rem;
+  }
+}
 .menu-header {
   position: relative;
   text-align: center;
@@ -556,28 +576,14 @@
     margin: 0;
   }
 }
-.view-menus {
+section.view-menus {
   padding-top: 1rem;
   position: relative;
   padding-bottom: 3.75rem;
   background-color: #f6f6f6;
   height: auto;
 }
-.view-menus .list-title {
-  width: 90%;
-}
-.view-menus ul {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: space-between;
-  justify-content: center;
-  width: 88%;
-  margin: 0 auto;
-}
-.view-menus ul li {
-  margin-right: 1.25rem;
-}
-.view-menus::before {
+section.view-menus::before {
   position: absolute;
   width: 100%;
   height: 20px;

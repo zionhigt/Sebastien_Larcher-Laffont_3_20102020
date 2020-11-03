@@ -1,6 +1,6 @@
-.view-menus
+
+section.view-menus
 {
-	$w: calc(100% + 60px);
 
 	padding-top: 1rem;	
 	position: relative;
@@ -9,26 +9,6 @@
 	background-color: $light_grey;
 	height: auto;
 
-	& .list-title
-	{
-		width: 90%;
-	}
-	& ul
-	{
-		display: flex;
-		flex-flow: row wrap;
-		align-content: space-between;
-		justify-content: center;
-		width: pc(330px);
-		margin: 0 auto;
-		// flex-wrap: wrap;
-
-		& li
-		{
-			margin-right: rem(20px);
-		}
-	}
-
 	&::before
 	{
 		@include absolute_box(100%, 20px, -20px, 0, 0, 0);
@@ -36,15 +16,4 @@
 		background-color: $light_grey;
 		border-radius: 2rem 2rem 0 0;
 	}
-}
-
-@media #{$small} 
-{
-	
-	.view-menus
-	{
-
-		
-	}
-
 }

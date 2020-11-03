@@ -1,12 +1,26 @@
+
+
 .view-menus ul
 {
 	position: relative;
-	// top: rem(40px);
 	bottom: 0;
-	left: rem(20px);
 	padding: 0;
-	margin-top: 0;
-	// display: none;
+	margin: 0 auto;
 
+	display: flex;
+	flex-flow: row wrap;
+	align-content: space-between;
+	justify-content: center;
+
+	width: pc(330px);
+
+}
+
+@media #{$small_desktop}
+{
+	.view-menus ul
+	{
+		margin-bottom: rem(40px);
+	}
 }
 

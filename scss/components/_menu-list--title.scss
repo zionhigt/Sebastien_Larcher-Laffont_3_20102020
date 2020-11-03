@@ -1,9 +1,12 @@
+
+
 .list-title
 {
 	text-transform: uppercase;
 	margin-bottom: rem(26px);
 	font-size: 1rem;
 	list-style-type: none;
+	width: 100%;
 
 	&::after
 	{
@@ -13,5 +16,13 @@
 		content: "";
 		display: block;
 		background-color: $tertiary_color;
+	}
+}
+
+@media #{$small_desktop}
+{
+	.list-title
+	{
+		padding: 0 50%;
 	}
 }
