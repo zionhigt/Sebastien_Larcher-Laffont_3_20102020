@@ -2,7 +2,7 @@
 {
 	position: relative;
 	width: 100%;
-	height: rem(265px);
+	max-height: rem(275px);
 	overflow: hidden;
 
 	& img
@@ -15,11 +15,15 @@
 
 @media #{$small} 
 {
-	.big-picture
+	.big-picture 
 	{
-		overflow: visible;
-		width: auto;
-		height: 100%;
+		width: 100%;
+		max-height: 900px;
+		& img
+		{
+			width: 100%;
+			height: auto;
+		}
 	}
 
 }

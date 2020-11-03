@@ -1,13 +1,45 @@
-@mixin graded-heart($top: 0, $right:12px)
+@mixin graded-heart($top: 0, $right:12px, $bg: white)
 {
 	& .heart
 	{
-		& .heart__label
+		& label.heart__label
 		{
 			@include absolute_box(rem(40px), rem(40px), $top, $right);
 			z-index: 4;
-			padding: rem(2px);
-			background:no-repeat center/70% url($icon_path + 'heart-solid.svg');
+			background:no-repeat center/70% url($icon_path + 'heart-graded.svg');
+			
+			&::before
+			{
+				@include absolute_box(100%, 100%);
+				display: block;
+				content: "";
+				background:no-repeat center/70% url($icon_path + 'heart-solid.svg');
+				opacity: 1;
+				transition: opacity 0.5s, transform 0.5s ease-out;
+				transform-origin: top right;
+				overflow: hidden;
+				z-index: 2;
+
+			}
+
+			&::after
+			{
+				@include absolute_box(100%, 100%);
+				display: block;
+				border-radius: 50%;
+				background-color: $bg;
+				content: "";
+				opacity: 1;
+				transform: scaleX(1);
+				transition: transform 0.5s ease-in-out;
+				transform-origin: center;
+
+			}
+
+			&:hover
+			{
+				animation: jump 0.8s ease;
+			}
 		}
 	}
 
@@ -16,10 +48,19 @@
 		display: none;
 	}
 
-	&  input:checked + label.heart__label
+	&  input:checked + .heart__label
 	{
-		background-image: url($icon_path + 'heart-graded.svg');
+		&::before
+		{
+			opacity: 0;
+			
+		}
 
+		&::after
+		{
+			transform: scaleX(0);
+		}
+		
 	}
 
 }

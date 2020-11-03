@@ -4,9 +4,30 @@
 
 	padding-top: 1rem;	
 	position: relative;
-	top: rem(-30px);
+	// top: rem(-30px);
 	padding-bottom: rem(60px);
 	background-color: $light_grey;
+	height: auto;
+
+	& .list-title
+	{
+		width: 90%;
+	}
+	& ul
+	{
+		display: flex;
+		flex-flow: row wrap;
+		align-content: space-between;
+		justify-content: center;
+		width: pc(330px);
+		margin: 0 auto;
+		// flex-wrap: wrap;
+
+		& li
+		{
+			margin-right: rem(20px);
+		}
+	}
 
 	&::before
 	{
@@ -17,31 +38,13 @@
 	}
 }
 
-@media #{$medium} 
+@media #{$small} 
 {
 	
 	.view-menus
 	{
 
-		& .list-title
-		{
-			width: 90%;
-		}
-		& ul
-		{
-			display: flex;
-			flex-flow: row wrap;
-			align-content: space-between;
-			justify-content: center;
-			width: pc(330px);
-			margin: 0 auto;
-		// flex-wrap: wrap;
-
-		& li
-		{
-			margin-right: rem(20px);
-		}
-	}
+		
 	}
 
 }

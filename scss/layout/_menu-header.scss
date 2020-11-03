@@ -5,7 +5,7 @@
 	position: relative;
 	// top: rem(-80px);
 	display: flex;
-	flex-wrap: column nowrap;
+	flex-wrap: nowrap;
 	max-width: rem(375px);
 	height: 4rem;
 	background-color: $light_grey;
@@ -14,15 +14,32 @@
 	.logo
 	{
 		margin: 0;
+		z-index:3;
 	}
 }
 
 .menu-header
 {
-	@include graded-heart($top:-8px, $right:30px);
+	@include graded-heart($top:-8px, $right:30px, $bg: $light_grey);
 	@include logo($size:28px, $bg-color:$light_grey);
 	@include menu-title;
 	// margin: 0 rem(20px);
+}
+
+@media #{$mini}
+{
+	.menu-header
+	{
+		margin-bottom: 60px;
+		& .heart
+		{
+			margin-left: 60px;
+		}
+
+		& .logo
+		{
+		}
+	}
 }
 
 @media #{$medium}
@@ -37,3 +54,4 @@
 		}
 	}
 }
+
