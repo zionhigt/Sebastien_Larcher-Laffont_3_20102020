@@ -105,6 +105,7 @@
   width: 85.0666666667%;
   margin: 0.625rem 0.625rem 0 0;
   font-size: 0.9375rem;
+  white-space: normal;
 }
 .meal .price {
   align-self: flex-end;
@@ -923,7 +924,7 @@ body {
   transition: transform 0.6s;
 }
 .meal__flex .comment {
-  transition: width 0.6s;
+  transition: width 0.1s, white-space 0s 0.6s;
 }
 .meal label:hover + input + .meal__flex .comment, .meal input:checked + .meal__flex .comment {
   overflow-x: hidden;

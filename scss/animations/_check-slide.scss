@@ -16,7 +16,7 @@
 
 	&__flex .comment
 	{
-		transition: width 0.6s;
+		transition: width 0.1s, white-space 1s 1s;
 	}
 
 	& label:hover + input + &__flex .comment,
