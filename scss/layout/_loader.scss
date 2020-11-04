@@ -6,7 +6,7 @@ $origins: left, bottom, top, right;
 	background-color: white;
 	z-index: 4;
 	animation: happend 6.3s linear forwards;
-
+	overflow: hidden;
 	@include absolute_box(100%, 100%, 0, 0, 0, 0);
 	&__block
 	{

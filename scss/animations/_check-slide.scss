@@ -1,7 +1,10 @@
 
 .meal
 {
-	& input:checked + &__flex .price + .check, & input:checked + &__flex .price
+	& label:hover + input + &__flex .price + .check,
+	& label:hover + input + &__flex .price,
+	& input:checked + &__flex .price + .check,
+	& input:checked + &__flex .price,
 	{
 		transform: translateX(rem(-67px));
 	}
@@ -16,18 +19,24 @@
 		transition: width 0.6s;
 	}
 
+	& label:hover + input + &__flex .comment,
 	& input:checked + &__flex .comment
 	{
 		overflow-x: hidden;
 		width: pc(252px);
-		height: auto;
+		height: auto; //rem(20px);
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	& input:checked + &__flex .check::after
+	& label:hover + input + &__flex .check::after
 	{
 		transform: rotate(-360deg);
+	}
+
+	& input:checked + &__flex .check::before
+	{
+		transform: scaleX(0);
 	}
 
 }
