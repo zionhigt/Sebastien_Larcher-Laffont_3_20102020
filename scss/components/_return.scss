@@ -2,7 +2,13 @@
 {
 	display: block;
 	background: no-repeat center/60% url($icon_path + "arrow-left-solid.svg");
-	@include absolute_box(2rem, 2rem, 0, auto, auto, rem(20px));
+	// @include absolute_box(2rem, 2rem, 0, auto, auto, rem(20px));
+	position: fixed;
+	width: 2rem;
+	height: 2rem;
+	left: rem(20px);
+	z-index: 4;
+	top: 0.5rem;
 
 	a
 	{

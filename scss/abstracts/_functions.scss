@@ -1,3 +1,5 @@
+$global_loader_count:0;
+
 @function pc($px){
 
 	@return($px/375px*100%);

@@ -1,6 +1,5 @@
 @mixin logo($size:32px, $bg_color: white)// Apply to .logo_container
 {
-	position: relative;
 	text-align: center;
 	& .logo
 	{
