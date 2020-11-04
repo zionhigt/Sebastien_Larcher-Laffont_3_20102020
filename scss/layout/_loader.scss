@@ -5,7 +5,7 @@ $origins: left, bottom, top, right;
 {
 	background-color: white;
 	z-index: 4;
-	animation: happend 6.3s linear forwards;
+	animation: happend 4.2s linear forwards;
 	overflow: hidden;
 	// @include absolute_box(100%, 100%, 0, 0, 0, 0);
 	position: fixed;
@@ -37,7 +37,7 @@ $origins: left, bottom, top, right;
 	{
 		&__block__element-#{$i}
 		{
-			$count: 6;
+			$count: 4;
 			$t: 0;
 			$l: 0;
 			@if $i%2 == 1
@@ -64,10 +64,7 @@ $origins: left, bottom, top, right;
 				opacity: 1;
 				z-index: 1;
 				transform-origin: nth($origins, $i);
-				@if $global_loader_count == 0
-				{
-					animation: scale 1s linear $count alternate;
-				}
+				animation: scale 1s linear $count alternate;
 			}
 
 			&::after

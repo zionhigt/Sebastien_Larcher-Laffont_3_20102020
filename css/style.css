@@ -282,8 +282,23 @@
 .functioning__link .list--1 {
   background: no-repeat center/100% url("../images/ico/mobile-alt-solid.svg");
 }
-.functioning__link:hover .list--1 {
+.functioning__link .list--1::before {
+  content: "";
+  display: block;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: no-repeat center/100% url("../images/ico/mobile-alt-solid-purple.svg");
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+.functioning__link:hover .list--1::before {
+  opacity: 1;
 }
 .functioning__link .number--2::before {
   content: "2";
@@ -301,8 +316,23 @@
 .functioning__link .list--2 {
   background: no-repeat center/85% url("../images/ico/list-ul-solid.svg");
 }
-.functioning__link:hover .list--2 {
+.functioning__link .list--2::before {
+  content: "";
+  display: block;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: no-repeat center/85% url("../images/ico/list-ul-solid-purple.svg");
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+.functioning__link:hover .list--2::before {
+  opacity: 1;
 }
 .functioning__link .number--3::before {
   content: "3";
@@ -320,8 +350,23 @@
 .functioning__link .list--3 {
   background: no-repeat center/85% url("../images/ico/store-solid.svg");
 }
-.functioning__link:hover .list--3 {
+.functioning__link .list--3::before {
+  content: "";
+  display: block;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: no-repeat center/85% url("../images/ico/store-solid-purple.svg");
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+.functioning__link:hover .list--3::before {
+  opacity: 1;
 }
 .functioning__link p {
   font-weight: bold;
@@ -343,8 +388,28 @@
   left: 0;
   z-index: 2;
 }
-.functioning__link:hover {
-  background-color: #f5edff;
+.functioning__link:hover::before {
+  opacity: 0.1;
+}
+.functioning__link:hover .number {
+  animation: jump 0.2s ease-out 2;
+}
+.functioning__link::before {
+  content: "";
+  display: block;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #FF79DA;
+  opacity: 0;
+  border-radius: 1rem;
+  transition: opacity 0.4s;
+  z-index: 0;
 }
 
 .functioning ul {
@@ -494,7 +559,7 @@
 .loader {
   background-color: white;
   z-index: 4;
-  animation: happend 6.3s linear forwards;
+  animation: happend 4.2s linear forwards;
   overflow: hidden;
   position: fixed;
   margin: auto;
@@ -530,7 +595,7 @@
   opacity: 1;
   z-index: 1;
   transform-origin: left;
-  animation: scale 1s linear 6 alternate;
+  animation: scale 1s linear 4 alternate;
 }
 .loader__block__element-1::after {
   position: absolute;
@@ -539,7 +604,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  animation: scale 1s -0.7s linear 6 alternate;
+  animation: scale 1s -0.7s linear 4 alternate;
 }
 .loader__block__element-2 {
   top: 0;
@@ -555,7 +620,7 @@
   opacity: 1;
   z-index: 1;
   transform-origin: bottom;
-  animation: scale 1s linear 6 alternate;
+  animation: scale 1s linear 4 alternate;
 }
 .loader__block__element-2::after {
   position: absolute;
@@ -564,7 +629,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  animation: scale 1s -0.7s linear 6 alternate;
+  animation: scale 1s -0.7s linear 4 alternate;
 }
 .loader__block__element-3 {
   top: 50%;
@@ -580,7 +645,7 @@
   opacity: 1;
   z-index: 1;
   transform-origin: top;
-  animation: scale 1s linear 6 alternate;
+  animation: scale 1s linear 4 alternate;
 }
 .loader__block__element-3::after {
   position: absolute;
@@ -589,7 +654,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  animation: scale 1s -0.7s linear 6 alternate;
+  animation: scale 1s -0.7s linear 4 alternate;
 }
 .loader__block__element-4 {
   top: 50%;
@@ -605,7 +670,7 @@
   opacity: 1;
   z-index: 1;
   transform-origin: right;
-  animation: scale 1s linear 6 alternate;
+  animation: scale 1s linear 4 alternate;
 }
 .loader__block__element-4::after {
   position: absolute;
@@ -614,7 +679,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  animation: scale 1s -0.7s linear 6 alternate;
+  animation: scale 1s -0.7s linear 4 alternate;
 }
 
 .view-menus ul {
@@ -924,7 +989,7 @@ body {
   transition: transform 0.6s;
 }
 .meal__flex .comment {
-  transition: width 0.1s, white-space 0s 0.6s;
+  transition: width 0.1s, white-space 1s 1s;
 }
 .meal label:hover + input + .meal__flex .comment, .meal input:checked + .meal__flex .comment {
   overflow-x: hidden;

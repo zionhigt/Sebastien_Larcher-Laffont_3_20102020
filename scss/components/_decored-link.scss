@@ -1,14 +1,12 @@
 
 
-$map-ico:(	1: $icon_path + "mobile-alt-solid.svg",
-	2: $icon_path + "list-ul-solid.svg",
-	3: $icon_path + "store-solid.svg"
-	);
+$ico-default: $icon_path + "mobile-alt-solid.svg",
+$icon_path + "list-ul-solid.svg", 
+$icon_path + "store-solid.svg";
 
-$map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
-	2: $icon_path + "list-ul-solid-purple.svg",
-	3: $icon_path + "store-solid-purple.svg"
-	);
+$ico-purple: $icon_path + "mobile-alt-solid-purple.svg",
+$icon_path + "list-ul-solid-purple.svg",
+$icon_path + "store-solid-purple.svg";
 
 @mixin link
 {
@@ -47,6 +45,8 @@ $map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
 				text-align: center;
 				@include absolute_box(auto, 85%,  0, 0, 0, 0);
 			}
+
+			
 		}
 
 		& .list--#{$i}
@@ -55,7 +55,18 @@ $map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
 			@if $i != 1{
 				$s: 85%;
 			}
-			background: no-repeat center/$s url(map-get($map_ico, $i));
+			background: no-repeat center/$s url(nth($ico_default, $i));
+
+			&::before
+			{
+				content: "";
+				display: block;
+				margin: auto;
+				@include absolute_box(100%, 100%, 0, 0, 0, 0);
+				background: no-repeat center/$s url(nth($ico_purple, $i));
+				opacity: 0;
+				transition: opacity 0.4s ease-out;
+			}
 
 		}
 
@@ -65,7 +76,11 @@ $map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
 			@if $i != 1{
 				$s: 85%;
 			}
-			background: no-repeat center/$s url(map-get($map_ico_purple, $i));
+
+			&::before
+			{
+				opacity: 1;
+			}
 		}
 	}
 
@@ -82,9 +97,19 @@ $map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
 		z-index: 2;
 	}
 
-	&:hover
+	&:hover 
 	{
-		background-color: #f5edff;
+		&::before
+		{
+			opacity: 0.1;
+
+		}
+
+		& .number
+		{
+			animation: jump 0.2s ease-out 2;
+
+		}
 	}
 
 
@@ -94,6 +119,20 @@ $map-ico-purple:(	1: $icon_path + "mobile-alt-solid-purple.svg",
 .functioning__link
 {
 	@include link;
+
+	&::before
+	{
+		content: "";
+		display: block;
+		margin: auto;
+		@include absolute_box(100%, 100%, 0, 0, 0, 0);
+		background-color: $secondary_color;
+		opacity: 0;
+		border-radius: 1rem;
+		transition: opacity 0.4s;
+		z-index: 0;
+
+	}
 	
 }
 
