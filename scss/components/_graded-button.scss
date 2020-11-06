@@ -1,5 +1,6 @@
 @mixin graded-button
 {
+	position: relative;
 	background:{
 		image: linear-gradient($secondary_color -10%,  $primary_color 150%);
 	};
@@ -12,14 +13,58 @@
 	border: none;
 	width: rem(218px);
 	padding: 1rem 0.5rem;
-	box-shadow: $elevated_dark_shadow;
+	box-shadow: $elevated_light_shadow;
+	transition: box-shadow 0.3s ease-out;
+
+	&::before
+	{
+		@include absolute_box(100%, 100%, 0, 0, 0, 0);
+		border-radius: rem(50px);
+		background:linear-gradient(white -10%,  rgba(#fff, 0) 150%);
+		opacity: 0;
+		display: block;
+		content: "";
+		transform-origin: center;
+		transition: transform 0.3s ease-in-out;
+
+	}
+
+	&::after
+	{
+		@include absolute_box(100%, 100%, 0, 0, 0, 0);
+		border-radius: rem(50px);
+		background-color: $deep_grey;
+		opacity: 0;
+		display: block;
+		content: "";
+		transition: opacity 0.3s ease-out;
+
+	}
+
+
+
+	&:hover
+	{
+		box-shadow: $elevated_dark_shadow;
+		&::before
+		{
+			opacity: 0.6;
+
+		}
+	}
 
 	&:active
 	{
-		background:{
-			image: linear-gradient(darken($secondary_color, 5%) -10%,  darken($primary_color, 30%) 150%);
-		};	
 		box-shadow: $puted_shadow;
+
+		&::before
+		{
+			opacity: 0;
+		}
+		&::after
+		{
+			opacity: 0.2;
+		}
 	}
 }
 

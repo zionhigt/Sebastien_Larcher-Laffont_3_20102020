@@ -55,7 +55,6 @@
 }
 
 .view-menus .order__button {
-  position: relative;
   top: 3.125rem;
   margin: 0 auto 4.375rem auto;
 }
@@ -68,7 +67,7 @@
   list-style-type: none;
   background-color: white;
   border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 375px;
   min-height: 4.1875rem;
@@ -190,13 +189,18 @@
   height: 3.125rem;
   background: linear-gradient(#c4c4c4 5%, 5.9%, #eaeaea);
 }
-.urhere__marker::before {
-  width: 10rem;
-  content: "Paris, Belleville";
-  background: no-repeat top left/1rem url("../images/ico/map-marker-alt-solid.svg");
+.urhere__marker input {
+  width: 12.5rem;
+  background: no-repeat center left/1rem url("../images/ico/map-marker-alt-solid.svg");
+  font-size: 1.125rem;
+  padding-left: 1.5rem;
+  border: none;
   font-weight: bold;
   text-align: center;
   margin: auto;
+}
+.urhere__marker input:focus {
+  outline-color: #7e7e7e;
 }
 
 .list-footer {
@@ -246,7 +250,7 @@
   height: 4.6875rem;
   background-color: #f6f6f6;
   border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.3);
 }
 .functioning__link .number {
   background-color: #9356DC;
@@ -421,6 +425,7 @@
 }
 
 .btn {
+  position: relative;
   background-image: linear-gradient(#FF79DA -10%, #9356DC 150%);
   display: block;
   text-decoration: none;
@@ -431,11 +436,54 @@
   border: none;
   width: 13.625rem;
   padding: 1rem 0.5rem;
-  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-out;
+}
+.btn::before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3.125rem;
+  background: linear-gradient(white -10%, rgba(255, 255, 255, 0) 150%);
+  opacity: 0;
+  display: block;
+  content: "";
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+.btn::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3.125rem;
+  background-color: #353535;
+  opacity: 0;
+  display: block;
+  content: "";
+  transition: opacity 0.3s ease-out;
+}
+.btn:hover {
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.55);
+}
+.btn:hover::before {
+  opacity: 0.6;
 }
 .btn:active {
-  background-image: linear-gradient(#ff60d3 -10%, #481a7f 150%);
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.45);
+}
+.btn:active::before {
+  opacity: 0;
+}
+.btn:active::after {
+  opacity: 0.2;
 }
 
 .card {
@@ -446,7 +494,7 @@
   width: 20.9375rem;
   height: 15.625rem;
   border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 .card a {

@@ -6,13 +6,21 @@
 	height: rem(50px);
 	background: linear-gradient(darken($basic_grey, 15%) 5%, 5.9%, $basic_grey);
 
-	&::before
+	& input
 	{
-		width: rem(160px);
-		content: "Paris, Belleville";
-		background: no-repeat top  left/1rem url($icon_path + "map-marker-alt-solid.svg");
+		width: rem(200px);
+		background: no-repeat center  left/1rem url($icon_path + "map-marker-alt-solid.svg");
+		font-size: rem(18px);
+		padding-left: 1.5rem;
+		border: none;
 		font-weight: bold;
 		text-align: center;
 		margin: auto;
+
+		&:focus
+		{
+			outline-color: $dark_grey;
+
+		}
 	}
 }
