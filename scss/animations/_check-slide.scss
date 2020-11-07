@@ -14,17 +14,12 @@
 		transition: transform 0.6s;
 	}
 
-	&__flex .comment
-	{
-		transition: width 0.1s, white-space 1s 1s;
-	}
-
 	& label:hover + input + &__flex .comment,
 	& input:checked + &__flex .comment
 	{
 		overflow-x: hidden;
 		width: pc(252px);
-		height: auto; //rem(20px);
+		height: auto;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}

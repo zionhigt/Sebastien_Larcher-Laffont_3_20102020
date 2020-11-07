@@ -6,13 +6,12 @@
 	bottom: 0;
 	padding: 0;
 	margin: 0 auto;
-
 	display: flex;
 	flex-flow: row wrap;
 	align-content: space-between;
 	justify-content: center;
-
 	width: pc(330px);
+	transition: height 0.1s 1s;
 
 }
 
