@@ -18,6 +18,20 @@
 
 }
 
+@media #{$mini}
+{
+	.preview
+	{
+		padding-left: rem(10px);
+		padding-right: rem(10px);
+
+		& h2, &__wrap
+		{
+			width: 100%;
+		}
+	}
+}
+
 @media #{$medium} {
 	
 	.preview

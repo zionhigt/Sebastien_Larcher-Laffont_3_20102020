@@ -146,4 +146,18 @@ $icon_path + "store-solid-purple.svg";
 
 }
 
+@media #{$mini}
+{
+	.functioning__link
+	{
+		min-height: rem(75px);
+		height: auto;
+
+		& p
+		{
+			height: 100%;
+		}
+	}
+}
+
 

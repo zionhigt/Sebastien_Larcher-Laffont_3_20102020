@@ -424,6 +424,15 @@
   padding: 0;
 }
 
+@media all and (max-width: 350px) {
+  .functioning__link {
+    min-height: 4.6875rem;
+    height: auto;
+  }
+  .functioning__link p {
+    height: 100%;
+  }
+}
 .btn {
   position: relative;
   background-image: linear-gradient(#FF79DA -10%, #9356DC 150%);
@@ -604,6 +613,11 @@
   box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
 }
 
+@media all and (max-width: 350px) {
+  .card {
+    width: auto;
+  }
+}
 .loader {
   background-color: white;
   z-index: 4;
@@ -863,6 +877,17 @@ section.view-menus::before {
   width: 20.9375rem;
 }
 
+@media all and (max-width: 350px) {
+  .functioning h2 {
+    width: 100%;
+  }
+  .functioning ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    width: 100%;
+  }
+}
 @media all and (min-width: 767px) {
   .functioning h2 {
     width: 90%;
@@ -899,6 +924,15 @@ section.view-menus::before {
   width: 20.9375rem;
 }
 
+@media all and (max-width: 350px) {
+  .preview {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+  .preview h2, .preview__wrap {
+    width: 100%;
+  }
+}
 @media all and (min-width: 767px) {
   .preview h2 {
     width: 90%;

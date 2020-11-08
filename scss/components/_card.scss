@@ -80,3 +80,11 @@
 {
 	@include panel-new;
 }
+
+@media #{$mini}
+{
+	.card
+	{
+		width: auto;
+	}
+}
