@@ -1,39 +1,66 @@
-
-.meal
+$v: 74% - pc(67px);
+@keyframes mini_in
 {
-	& label:hover + input + &__flex .price + .check,
-	& label:hover + input + &__flex .price,
-	& input:checked + &__flex .price + .check,
-	& input:checked + &__flex .price,
+	0%
 	{
-		transform: translateX(rem(-67px));
-	}
-
-	.price, .check, .check::after
-	{
-		transition: transform 0.6s;
-	}
-
-	& label:hover + input + &__flex .comment,
-	& input:checked + &__flex .comment
-	{
-		overflow-x: hidden;
-		width: pc(252px);
-		height: auto;
-		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	& label:hover + input + &__flex .check::after
+	
+	100%
 	{
+		width: $v;
+		@debug $v;
+		white-space: nowrap;
+	}
+}
+
+@keyframes mini_out
+{
+	0%
+	{
+		white-space: nowrap;
+		width: $v;
+	}
+
+	
+	100%
+	{
+		white-space: normal;
+		width: 74%;
+	}
+}
+.meal
+{
+	& label:hover + input + &__flex + .price + .check,
+	& label + input:checked + &__flex + .price + .check
+	{
+		right: 0;
+	}
+	& label:hover + input + &__flex + .price,
+	& label + input:checked + &__flex + .price
+	{
+		right: 0;
+		// left: auto;
+	}
+
+	& label:hover + input + &__flex + .price + .check::after,
+	& label + input:checked + &__flex + .price + .check::after
+	{ 
 		transform: rotate(-360deg);
 	}
 
-	& input:checked + &__flex .check::before
+	& input:checked + &__flex + .price + .check::before
 	{
 		transform: scaleX(0);
 	}
 
+	& label:hover + input + &__flex,
+	& label + input:checked + &__flex
+	{
+		animation: mini_in 1s forwards;
+
+	}
 }
 
 

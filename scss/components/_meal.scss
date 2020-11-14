@@ -10,54 +10,70 @@
 			animation: pop 1s $delay ease-out forwards;
 		}
 	}
-	opacity: 0;
 	position: relative;
-	display: flex;
-	flex-flow: row wrap;
+	opacity: 0;
 	list-style-type: none;
-	background-color: white;
-	border-radius: 1rem;
-	box-shadow: $elevated_light_shadow;
 	width: 100%;
-	max-width: 375px; 
+	max-width: 375px;
 	min-height: rem(67px);
-	padding: rem(8.5px) rem(12px);
+	// padding: rem(8.5px) rem(12px);
 	margin-bottom: 1rem;
 	overflow: hidden;
+	box-shadow: $elevated_light_shadow;
+	border-radius: 1rem;
+	background-color: white;
 
-	& h2
-	{
-		width: 100%;
-		font-size: 1rem;
-		font-weight: bold;
-		margin: 0;
-	}
+	display: flex;
+	flex-flow: row nowrap;
+
 
 	&__flex
 	{
-		align-items: center;
+		position: relative;
 		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-around;
+		height: 100%;
+		width: 74%;
+		// min-width: 334px;
+		animation: mini_out 1s;
+		margin: 0 0 0 1rem;
+	}
+
+	& h2
+	{
+		font-size: 1rem;
+		font-weight: bold;
 		width: 100%;
+		margin: 0;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
 		height: auto;
 	}
 
-
 	& .comment
 	{
+		position: relative;
+		bottom: 0;
+		overflow-x: hidden;
+		text-overflow: ellipsis;
+		white-space: auto;
+		margin: 0;
 		height: auto;
-		width: pc(319px);
-		margin: rem(10px) rem(10px) 0 0;
-		font-size: rem(15px);
-		white-space: normal;
+		width: auto;	
 	}
 
 	& .price
 	{
-		align-self: flex-end;
+		position: relative;
+		z-index: 2;
+		margin: 0;
+		top: 2.5rem;
+		width: 2rem;
+		height: 2rem;
+		margin: 0 0.5rem;
+		transition: right 1s;
 		font-weight: bold;
-		padding: 0 0.5rem;
-		height: auto;
-		margin: rem(10px) 0 0 auto;
 	}
 
 }

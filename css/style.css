@@ -21,7 +21,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 4;
 }
 
 .meal .check {
@@ -30,8 +30,8 @@
   height: 100%;
   top: 0;
   right: -4.1875rem;
-  bottom: 0;
   background-color: #99E2D0;
+  transition: right 1s;
 }
 .meal .check::before {
   position: absolute;
@@ -41,7 +41,7 @@
   height: 100%;
   background-color: #99E2D0;
   opacity: 0.4;
-  transition: transform 0.6s;
+  transition: transform 1s;
   transform-origin: top right;
   z-index: 2;
 }
@@ -51,6 +51,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  transition: transform 1s;
   background: no-repeat center/2rem url("../images/ico/check-circle-solid.svg");
 }
 
@@ -60,20 +61,19 @@
 }
 
 .meal {
-  opacity: 0;
   position: relative;
-  display: flex;
-  flex-flow: row wrap;
+  opacity: 0;
   list-style-type: none;
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 375px;
   min-height: 4.1875rem;
-  padding: 0.53125rem 0.75rem;
   margin-bottom: 1rem;
   overflow: hidden;
+  box-shadow: 0 0.2rem 0.85rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
 }
 .meal:nth-child(2) {
   animation: pop 1s 0s ease-out forwards;
@@ -87,31 +87,45 @@
 .meal:nth-child(5) {
   animation: pop 1s 0.6s ease-out forwards;
 }
+.meal__flex {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 100%;
+  width: 74%;
+  animation: mini_out 1s;
+  margin: 0 0 0 1rem;
+}
 .meal h2 {
-  width: 100%;
   font-size: 1rem;
   font-weight: bold;
-  margin: 0;
-}
-.meal__flex {
-  align-items: center;
-  display: flex;
   width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
   height: auto;
 }
 .meal .comment {
+  position: relative;
+  bottom: 0;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: auto;
+  margin: 0;
   height: auto;
-  width: 85.0666666667%;
-  margin: 0.625rem 0.625rem 0 0;
-  font-size: 0.9375rem;
-  white-space: normal;
+  width: auto;
 }
 .meal .price {
-  align-self: flex-end;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  top: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  transition: right 1s;
   font-weight: bold;
-  padding: 0 0.5rem;
-  height: auto;
-  margin: 0.625rem 0 0 auto;
 }
 
 @media all and (min-width: 854px) {
@@ -1065,24 +1079,39 @@ body {
     transform: translateY(0);
   }
 }
-.meal label:hover + input + .meal__flex .price + .check, .meal label:hover + input + .meal__flex .price, .meal input:checked + .meal__flex .price + .check, .meal input:checked + .meal__flex .price {
-  transform: translateX(-4.1875rem);
+@keyframes mini_in {
+  0% {
+    white-space: nowrap;
+  }
+  100% {
+    width: 56.1333333333%;
+    white-space: nowrap;
+  }
 }
-.meal .price, .meal .check, .meal .check::after {
-  transition: transform 0.6s;
+@keyframes mini_out {
+  0% {
+    white-space: nowrap;
+    width: 56.1333333333%;
+  }
+  100% {
+    white-space: normal;
+    width: 74%;
+  }
 }
-.meal label:hover + input + .meal__flex .comment, .meal input:checked + .meal__flex .comment {
-  overflow-x: hidden;
-  width: 67.2%;
-  height: auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.meal label:hover + input + .meal__flex + .price + .check, .meal label + input:checked + .meal__flex + .price + .check {
+  right: 0;
 }
-.meal label:hover + input + .meal__flex .check::after {
+.meal label:hover + input + .meal__flex + .price, .meal label + input:checked + .meal__flex + .price {
+  right: 0;
+}
+.meal label:hover + input + .meal__flex + .price + .check::after, .meal label + input:checked + .meal__flex + .price + .check::after {
   transform: rotate(-360deg);
 }
-.meal input:checked + .meal__flex .check::before {
+.meal input:checked + .meal__flex + .price + .check::before {
   transform: scaleX(0);
+}
+.meal label:hover + input + .meal__flex, .meal label + input:checked + .meal__flex {
+  animation: mini_in 1s forwards;
 }
 
 /*# sourceMappingURL=style.css.map */
